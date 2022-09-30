@@ -49,12 +49,17 @@ function malesBetween30and40(people){
     return people.find(person => person.age > 30 && person.age < 40 && person.sex == 'M');
 }
 function youngestFemale(people){
-	/*
+/*
     let target = Math.min(...people.map(person2 => person2.age));
     return people.find(person => person.age == target && person.sex == 'F');
-	*/
+if the youngest person is a male it does not work
+*/
 	
-	let target = Math.min(...people.filter(person1 => person1.sex == 'F').map(person1 => person1.age));
+/*
+let name = persons.sort((person1, person2)=> person1.age - person2.age).find(person => person.sex == 'F').name;
+*/
+	
+    let target = Math.min(...people.filter(person1 => person1.sex == 'F').map(person1 => person1.age));
     return people.find(person => person.age == target && person.sex == 'F').name;
 }
 
