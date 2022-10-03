@@ -77,6 +77,7 @@ const kor = document.querySelector('#kor');
 const F = document.querySelector('#F');
 const M = document.querySelector('#M');
 const body = document.querySelector('body');
+const nemek = document.querySelector('#nemek');
 
 F.checked = false;
 M.checked = false;
@@ -91,15 +92,30 @@ ellenorzes.addEventListener('click', function(event){
     if(nevtext.length == 0){
         nev.classList.add("rossz");
         L = false;
+    } else {
+      nev.classList.remove("rossz");
     }
     if(kortext.length == 0 || kortext < 0 || kortext > 110){
         kor.classList.add("rossz");
         L = false;
+    } else {
+      kor.classList.remove("rossz");
     }
     if(!(Fchecked || Mchecked)){
         F.classList.add("rossz2");
         M.classList.add("rossz2");
         L = false;
+    } else {
+      
+  if(!(Fchecked || Mchecked)){
+        nemek.classList.add("rossz");
+        F.classList.add("rossz2");
+        M.classList.add("rossz2");
+        L = false;
+    } else {
+      nemek.classList.remove("rossz");
+    }
+
     }
     if(L){
         body.classList.add("bg");
